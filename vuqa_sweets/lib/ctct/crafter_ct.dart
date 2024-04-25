@@ -1,0 +1,33 @@
+import 'package:get/get.dart';
+import 'package:vuqa_sweets/modelevi/candy_model.dart';
+import 'package:vuqa_sweets/uti/hran.dart';
+import '../uti/Veshi.dart';
+
+class CrafterCt extends GetxController {
+  List<CandyModel> confeti = [];
+
+  void getNachaltiData() {
+    confeti = [
+      CandyModel('assets/decori/starry.png', 'Starry Lollipop', [2, 1, 3, 1],
+          Hran.hran!.getBool('Starry Lollipop') ?? false),
+      CandyModel('assets/decori/magical.png', 'Magical Chocolate', [3, 2, 2, 2],
+          Hran.hran!.getBool('Magical Chocolate') ?? false),
+      CandyModel('assets/decori/elven.png', 'Elven Dragee', [2, 2, 3, 4],
+          Hran.hran!.getBool('Elven Dragee') ?? false),
+      CandyModel('assets/decori/mooncake.png', 'Mooncake', [3, 4, 3, 4],
+          Hran.hran!.getBool('Mooncake') ?? false),
+      CandyModel('assets/decori/amulet.png', 'Amulet Candies', [4, 4, 4, 4],
+          Hran.hran!.getBool('Amulet Candies') ?? false),
+    ];
+  }
+
+  void craftCandy(int idex) {
+    confeti[idex].wasBought = true;
+    Hran.hran!.setBool(confeti[idex].nazv, true);
+    Veshi.setFabBlue(-confeti[idex].tsennik[0]);
+    Veshi.setFabGreen(-confeti[idex].tsennik[1]);
+    Veshi.setFabOrange(-confeti[idex].tsennik[2]);
+    Veshi.setFabRed(-confeti[idex].tsennik[3]);
+    update();
+  }
+}
