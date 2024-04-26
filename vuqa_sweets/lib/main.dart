@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:vuqa_sweets/bidi/glo.dart';
 import 'package:vuqa_sweets/uti/Veshi.dart';
 import 'package:vuqa_sweets/uti/fabrik.dart';
 import 'package:vuqa_sweets/uti/hran.dart';
@@ -30,13 +31,25 @@ void main() async {
   runApp(const MyApp());
 }
 
+enum DADADA { da, d }
+
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final DADADA hdjskhsdhsdjjhksdjk;
+  final DADADA hdjskhsddfshsdjjhksdjk;
+  final DADADA hdjskhfsdsdhsdjjhksdjk;
+  final DADADA hdjskhsfsddhsdjjhksdjk;
+  const MyApp(
+      {super.key,
+      this.hdjskhsdhsdjjhksdjk = DADADA.da,
+      this.hdjskhsddfshsdjjhksdjk = DADADA.da,
+      this.hdjskhfsdsdhsdjjhksdjk = DADADA.da,
+      this.hdjskhsfsddhsdjjhksdjk = DADADA.da});
 
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'Flutter Demo',
+      initialBinding: Glo(),
       theme: ThemeData(
         fontFamily: 'Monte',
         useMaterial3: true,

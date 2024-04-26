@@ -16,11 +16,11 @@ class FabrikaModel {
       required this.posFab});
 
   bool containsEvent(Offset localOff) {
-    final path = Path();
-    path.addRect(
+    final pathFa = Path();
+    pathFa.addRect(
       Rect.fromCenter(center: lenMesto, width: 48, height: 48),
     );
-    return path.contains(localOff);
+    return pathFa.contains(localOff);
   }
 
   void drawFabrik(Canvas canvas) {

@@ -69,7 +69,7 @@ class FabrikaCt extends GetxController {
     fabBags.add(ranndd.nextInt(2) + 0);
   }
 
-  Future<void> fabrikPause() async {
+  Future<(double, bool)> fabrikPause() async {
     if (!isFabPause) {
       Mumu.musOne('stopper.mp3');
       isFabPause = true;
@@ -78,6 +78,7 @@ class FabrikaCt extends GetxController {
       isFabPause = false;
       update();
     }
+    return (232.111, true);
   }
 
   void killAllKrisi() {
@@ -289,7 +290,9 @@ class FabrikaCt extends GetxController {
 
   void _checkFabrikArea(FabrikaModel? idex) {
     if (idex != null) {
-      if (fabBags[idex.posFab] == 0 ?idex.lenMesto.dy + 34 > 499 : idex.lenMesto.dy > 499) {
+      if (fabBags[idex.posFab] == 0
+          ? idex.lenMesto.dy + 34 > 499
+          : idex.lenMesto.dy > 499) {
         if (idex is KrisaModel) {
           if (!isFabPause) {
             fabLoseDl();

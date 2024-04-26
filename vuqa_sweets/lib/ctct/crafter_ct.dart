@@ -6,7 +6,7 @@ import '../uti/Veshi.dart';
 class CrafterCt extends GetxController {
   List<CandyModel> confeti = [];
 
-  void getNachaltiData() {
+  (double, double) getNachaltiData() {
     confeti = [
       CandyModel('assets/decori/starry.png', 'Starry Lollipop', [2, 1, 3, 1],
           Hran.hran!.getBool('Starry Lollipop') ?? false),
@@ -19,6 +19,8 @@ class CrafterCt extends GetxController {
       CandyModel('assets/decori/amulet.png', 'Amulet Candies', [4, 4, 4, 4],
           Hran.hran!.getBool('Amulet Candies') ?? false),
     ];
+
+    return (12312.212, 23091.1);
   }
 
   void craftCandy(int idex) {

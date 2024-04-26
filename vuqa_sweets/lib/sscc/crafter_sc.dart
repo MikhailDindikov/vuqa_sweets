@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:vuqa_sweets/main.dart';
 import 'package:vuqa_sweets/uti/Veshi.dart';
 
 import '../ctct/crafter_ct.dart';
 import '../modelevi/candy_model.dart';
 
 class CrafterSc extends StatefulWidget {
-  const CrafterSc({super.key});
+  final double jknfdknjfdnjdf999993333;
+  final double jkfdklkdkfdlkldfkl;
+  final int fkvmskdfvmdklfvmdfkvmdfklv;
+  const CrafterSc(
+      {super.key,
+      this.jknfdknjfdnjdf999993333 = 121212.111,
+      this.jkfdklkdkfdlkldfkl = 1292121299,
+      this.fkvmskdfvmdklfvmdfkvmdfklv = 99883222});
 
   @override
   State<CrafterSc> createState() => _CrafterScState();
@@ -21,6 +29,33 @@ class _CrafterScState extends State<CrafterSc> {
     candyCt.getNachaltiData();
     super.initState();
   }
+
+  
+  final DADADA hdjskhsdhsdjytrj3rte4234hksdjk = DADADA.da;
+  final DADADA hdjskhsdhsdjjyhrfe3ert4234hksdjk = DADADA.da;
+  final DADADA hdjskhsdhsdjjhtrfe3ter4234hksdjk = DADADA.da;
+  final DADADA hdjskhsdhsdjjytgref34234hksdjk = DADADA.da;
+  final DADADA hdjskhsdhsdjjtjyther3ert4234hksdjk = DADADA.da;
+  final DADADA hdjskhsdhsdjyhrfetertgdj34234hksdjk = DADADA.da;
+  final DADADA hdjskhsdhsdjhygrgdbdfj3ert4234hksdjk = DADADA.da;
+  final DADADA hdjskhsdhsdjgrbdfj3ert4234hksdjk = DADADA.da;
+  final DADADA hdjskhsdhsdjhytgrfej3erte4234hksdjk = DADADA.da;
+  final DADADA hdjskhsdhsdjjjytgrfe3ertter4234hksdjk = DADADA.da;
+  final DADADA hdjskhsdhsdjtrejythrgeftj34234hksdjk = DADADA.da;
+  final DADADA hdjskhsdhsdjjtjuytgrfeerte34234hksdjk = DADADA.da;
+  final DADADA hdjskhsdhjtyrgsdjerterj34234hksdjk = DADADA.da;
+  final DADADA hdjskhsdhjtyhrsdjjgfds34234hksdjk = DADADA.da;
+  final DADADA hdjskhsdhsdjj34gytrefds234hksdjk = DADADA.da;
+  final DADADA hdjskhsdhsdjj3bvctrgsdf4234hksdjk = DADADA.da;
+  final DADADA hdjskhsdhsdjj3cbvtyrefxv4234hksdjk = DADADA.da;
+  final DADADA hdjskhsdhsdjj3xsd42387g54hksdjk = DADADA.da;
+  final DADADA hdjskhsdhsdjj3cvb42376f4er4hksdjk = DADADA.da;
+  final DADADA hdjskhsdhsdjj3h544265w43434hksdjk = DADADA.da;
+  final DADADA hdjskhsdhsdjj354ty56egr4234hksdjk = DADADA.da;
+  final DADADA hdjskhsdhsdjj34fre4tefr4234hksdjk = DADADA.da;
+  final DADADA hdjskhsdhsdjj56gref3454tr234hksdjk = DADADA.da;
+  final DADADA hdjskhsdhsdjj356y4rge65t4234hksdjk = DADADA.da;
+  final DADADA hdjskhsdhsdjj35r423654hksdjk = DADADA.da;
 
   @override
   Widget build(BuildContext context) {

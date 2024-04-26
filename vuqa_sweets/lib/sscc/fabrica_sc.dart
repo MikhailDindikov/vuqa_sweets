@@ -14,7 +14,16 @@ import '../shtuki/btn_tex.dart';
 import '../uti/Veshi.dart';
 
 class FabrikaSc extends StatefulWidget {
-  const FabrikaSc({super.key});
+  final int jkfdjkdfjkhdfkjhdf;
+  final int dkjsldcmsldkc;
+  final bool edioweewijdw029029292;
+  final bool jdvojie920932039;
+  const FabrikaSc(
+      {super.key,
+      this.jkfdjkdfjkhdfkjhdf = 123235346,
+      this.dkjsldcmsldkc = 4365342541,
+      this.edioweewijdw029029292 = true,
+      this.jdvojie920932039 = true});
 
   @override
   State<FabrikaSc> createState() => _FabrikaScState();

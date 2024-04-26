@@ -19,7 +19,7 @@ class GloCt extends FullLifeCycleController with FullLifeCycleMixin {
   @override
   void onResumed() {
     if ((Hran.hran!.getBool('musi') ?? true)) {
-      Mumu.goMu('bg_mus.mp3');
+      Mumu.goMu('fon_mus.mp3');
     }
   }
   
