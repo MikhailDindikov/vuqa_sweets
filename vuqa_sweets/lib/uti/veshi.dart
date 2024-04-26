@@ -19,6 +19,16 @@ class Veshi {
     return (true, 5876846);
   }
 
+  static bool moemRRuki() {
+    fabKillers.value = Hran.hran!.getInt('killers') ?? 0;
+    fabStoppers.value = Hran.hran!.getInt('stoppers') ?? 0;
+    fabRed.value = Hran.hran!.getInt('fabRed') ?? 0;
+    fabGreen.value = Hran.hran!.getInt('fabGreen') ?? 0;
+    fabOrange.value = Hran.hran!.getInt('fabOrange') ?? 0;
+    fabBlue.value = Hran.hran!.getInt('fabBlue') ?? 0;
+    return false;
+  }
+
   static (bool, int) setKillers(int killersSum) {
     fabKillers.value += killersSum;
     Hran.hran!.setInt('killers', fabKillers.value);
