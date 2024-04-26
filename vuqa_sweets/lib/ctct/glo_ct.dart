@@ -30,12 +30,40 @@ class GloCt extends FullLifeCycleController with FullLifeCycleMixin {
   @override
   void onHidden() {}
 
-  DROOOOOO generatePo53453sdf44464545hdfgssKl(
+  DROOOOOO generatePo53453sdf444y567556546345636225663264545hdfgssKl(
       int xKFabk, int yKFabk, FabrikaType themeP) {
     final xKFab = xKFabk;
     final yKFab = yKFabk;
-    final themePlFab = themeP;
-    final cenPositionFab = Offset((25 + 50 * xKFab).toDouble(), (25 + 50 * yKFab).toDouble());
+    final String riuhvf8f4h77h843783478h34h78 =
+        'kgfobgrkgeropkekorfekworferkpokferkoryjthewfekropf';
+    final String riuhvf8f4h77h843y3455treytet783478h34h78 =
+        'kgfobgrkgeropkekorfekjytrhegwfworferkpokferkofekropf';
+    final String riuhvf8f4h77trgwewfqw5h843783478h34h78 =
+        'kgfobgrkgeropkekorfejytdhrgsfekworferkpokferkofekropf';
+    final String riuhvf8f4h77h846yherdfgdfghs3783478h34h78 =
+        'kgfobgrkgeropkekjtrhrgefaorfekworferkpokferkofekropf';
+    final String riuhvf8f4h77h84jhegsredfdhhjghd3783478h34h78 =
+        'kgfobgrkgerojhrtgesfawpkekorfekworferkpokferkofekropf';
+    final String riuhvf8f4h77h8jrehrtsfdhdjghsgj43783478h34h78 =
+        'kgfobgrkgerhtegwfropkekorfekworferkpokferkofekropf';
+    final String riuhvf8f4h77h84rtyehrsgssdhfgjh3783478h34h78 =
+        'kgfobgrkgethdrgsefawdropkekorfekworferkpokferkofekropf';
+    final String riuhvf8f4h77h84jrtyhrgshdfhjgdhsg3783478h34h78 =
+        'kgfobgrtregsfawkgeropkekorfekworferkpokferkofekropf';
+    final String riuhvf8f4h77h843gdhfsghfgjhsg783478h34h78 =
+        'kgfobgrkgeropkekterw4t3t45orfekworferkpokferkofekropf';
+    final String riuhvf8f4h77h8rtyew4ery54343783478h34h78 =
+        'kgfobgrkgeropkekor986u6fekworferkpokferkofekropf';
+    final String riuhvf8f4h77h84hetrgwefadfhsg3783478h34h78 =
+        'kgfobgrkgeropkekotuyr565rfekworferkpokferkofekropf';
+    final String riuhvf8f4h76y5wterhtss7h843783478h34h78 =
+        'kgfobgrkgeropkekorfeuy5rtyry565kworferkpokferkofekropf';
+    final String riuhvf8f4h7eyrwtsdfsg7h843783478h34h78 =
+        'kgfobgrkgeropkekorfekth56y5trtworferkpokferkofekropf';
+    final String riuhvf8f4hy5w4etrwert77h843783478h34h78 =
+        'kgfobgrkgeropkekorfegg456kworferkpokferkofekropf';
+    final String riuhvf8f4h45t45trjtyyr77h843783478h34h78 =
+        'kgfobgrkgeropkekorfekworh6hrtgrtgrgrgferkpokferkofekropf';
 
     return DROOOOOO.re;
   }
