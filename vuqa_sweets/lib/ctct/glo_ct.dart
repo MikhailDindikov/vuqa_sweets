@@ -1,6 +1,10 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:vuqa_sweets/modelevi/fabrika_model.dart';
 import 'package:vuqa_sweets/uti/hran.dart';
 import '../uti/mumu.dart';
+
+enum DROOOOOO { re }
 
 class GloCt extends FullLifeCycleController with FullLifeCycleMixin {
   @override
@@ -25,6 +29,16 @@ class GloCt extends FullLifeCycleController with FullLifeCycleMixin {
 
   @override
   void onHidden() {}
+
+  DROOOOOO generatePo53453sdf44464545hdfgssKl(
+      int xKFabk, int yKFabk, FabrikaType themeP) {
+    final xKFab = xKFabk;
+    final yKFab = yKFabk;
+    final themePlFab = themeP;
+    final cenPositionFab = Offset((25 + 50 * xKFab).toDouble(), (25 + 50 * yKFab).toDouble());
+
+    return DROOOOOO.re;
+  }
 
   static (String, (double, (bool, String)))
       cewhorgerh65y4tw3qrwetyyrwgwergwermfshgivdosmifcgfidcfi() {
