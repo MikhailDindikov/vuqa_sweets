@@ -9,6 +9,7 @@ import 'package:vuqa_sweets/modelevi/fabrika_model.dart';
 import 'package:vuqa_sweets/modelevi/krisa_model.dart';
 import 'package:vuqa_sweets/shtuki/btn_tex.dart';
 import 'package:vuqa_sweets/uti/fabrik.dart';
+import 'package:vuqa_sweets/uti/hran.dart';
 import 'package:vuqa_sweets/uti/mumu.dart';
 
 import '../sscc/nach_sc.dart';
@@ -16,7 +17,7 @@ import '../uti/Veshi.dart';
 
 class FabrikaCt extends GetxController {
   double tickkk = 3.0;
-  double uscor = 0.5;
+  double uscor = 0.57;
   int _stagg = 3;
   bool _shouldGenFab = true;
   final ranndd = Random();
@@ -238,31 +239,41 @@ class FabrikaCt extends GetxController {
           posFab: idex);
     } else if (ranVa < 17 + 16.6) {
       return FabrikaModel(
-          fotka: Fabrik.redC,
+          fotka: (Hran.hran!.getBool('Magical Chocolate') ?? false)
+              ? Fabrik.topRedC
+              : Fabrik.redC,
           fabrikaType: FabrikaType.red,
           lenMesto: Offset(widdd / 2 + idex + idex * widdd, -24),
           posFab: idex);
     } else if (ranVa < 17 + 16.6 * 2) {
       return FabrikaModel(
-          fotka: Fabrik.blueC,
+          fotka: (Hran.hran!.getBool('Mooncake') ?? false)
+              ? Fabrik.topBlueC
+              : Fabrik.blueC,
           fabrikaType: FabrikaType.blue,
           lenMesto: Offset(widdd / 2 + idex + idex * widdd, -24),
           posFab: idex);
     } else if (ranVa < 17 + 16.6 * 3) {
       return FabrikaModel(
-          fotka: Fabrik.orangleC,
+          fotka: (Hran.hran!.getBool('Amulet Candies') ?? false)
+              ? Fabrik.topOrangleC
+              : Fabrik.orangleC,
           fabrikaType: FabrikaType.orange,
           lenMesto: Offset(widdd / 2 + idex + idex * widdd, -24),
           posFab: idex);
     } else if (ranVa < 17 + 16.6 * 4) {
       return FabrikaModel(
-          fotka: Fabrik.pinkC,
+          fotka: (Hran.hran!.getBool('Starry Lollipop') ?? false)
+              ? Fabrik.topPinkC
+              : Fabrik.pinkC,
           fabrikaType: FabrikaType.pink,
           lenMesto: Offset(widdd / 2 + idex + idex * widdd, -24),
           posFab: idex);
     } else {
       return FabrikaModel(
-          fotka: Fabrik.greenC,
+          fotka: (Hran.hran!.getBool('Elven Dragee') ?? false)
+              ? Fabrik.topGreenC
+              : Fabrik.greenC,
           fabrikaType: FabrikaType.green,
           lenMesto: Offset(widdd / 2 + idex + idex * widdd, -24),
           posFab: idex);
@@ -278,7 +289,7 @@ class FabrikaCt extends GetxController {
 
   void _checkFabrikArea(FabrikaModel? idex) {
     if (idex != null) {
-      if (idex.lenMesto.dy + 24 > 499) {
+      if (fabBags[idex.posFab] == 0 ?idex.lenMesto.dy + 34 > 499 : idex.lenMesto.dy > 499) {
         if (idex is KrisaModel) {
           if (!isFabPause) {
             fabLoseDl();

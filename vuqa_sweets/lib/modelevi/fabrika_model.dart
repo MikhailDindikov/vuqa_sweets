@@ -27,9 +27,9 @@ class FabrikaModel {
     canvas.save();
     canvas.translate(lenMesto.dx, lenMesto.dy);
     double fabScale = 1;
-    if (499 - lenMesto.dy + 12 < 48) {
-      fabScale = (499 - lenMesto.dy + 12) / 48;
-    }
+    // if (499 - lenMesto.dy + 12 < 54) {
+    //   fabScale = (499 - lenMesto.dy) /48;
+    // }
     canvas.translate(-24 * fabScale, -24 * fabScale);
     canvas.scale((fabScale * 48) / fotka.width, (fabScale * 48) / fotka.height);
     canvas.drawImage(fotka, Offset.zero, Paint());

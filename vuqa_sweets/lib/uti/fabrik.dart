@@ -4,11 +4,16 @@ import 'dart:ui' as ui;
 import 'package:flutter/services.dart';
 
 class Fabrik {
-   static late ui.Image redC;
+  static late ui.Image redC;
   static late ui.Image orangleC;
   static late ui.Image blueC;
   static late ui.Image pinkC;
   static late ui.Image greenC;
+  static late ui.Image topRedC;
+  static late ui.Image topOrangleC;
+  static late ui.Image topBlueC;
+  static late ui.Image topPinkC;
+  static late ui.Image topGreenC;
   static late ui.Image ratC;
   static late ui.Image cookieC;
 
@@ -18,6 +23,11 @@ class Fabrik {
     blueC = await _getImg('assets/decori/bc.png');
     pinkC = await _getImg('assets/decori/pc.png');
     greenC = await _getImg('assets/decori/gc.png');
+    topRedC = await _getImg('assets/decori/top_rc.png');
+    topOrangleC = await _getImg('assets/decori/top_oc.png');
+    topBlueC = await _getImg('assets/decori/top_bc.png');
+    topPinkC = await _getImg('assets/decori/top_pc.png');
+    topGreenC = await _getImg('assets/decori/top_gc.png');
     ratC = await _getImg('assets/decori/rat.png');
     cookieC = await _getImg('assets/decori/cookie.png');
   }

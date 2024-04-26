@@ -193,182 +193,274 @@ class _FabrikaScState extends State<FabrikaSc> {
                   SizedBox(
                     height: 32,
                   ),
-                  GestureDetector(
-                    onPanDown: (details) {
-                      fabritaCt.onFabrikaTap(details.localPosition);
-                      eventOffset = details.localPosition;
-                      fabrik = fabritaCt.fabriks.firstWhereOrNull((element) =>
-                          element == null
-                              ? false
-                              : element.fabrikaType == FabrikaType.rat ||
-                                      element.fabrikaType == FabrikaType.cookie
-                                  ? false
-                                  : element.containsEvent(eventOffset));
-                    },
-                    onPanEnd: (details) {
-                      eventOffset = Offset.zero;
-                      fabrik = null;
-                      doneEvent = false;
-                    },
-                    onHorizontalDragUpdate: (details) async {
-                      if (!doneEvent) {
-                        if (eventOffset.dx - details.localPosition.dx > 2) {
-                          if (fabrik != null) {
-                            doneEvent = true;
-                            fabritaCt.onFabrikaSwipe(fabrik!, 'leSw');
-                          }
-                        } else if (eventOffset.dx - details.localPosition.dx <
-                            -2) {
-                          if (fabrik != null) {
-                            doneEvent = true;
-                            fabritaCt.onFabrikaSwipe(fabrik!, 'riSw');
-                          }
-                        }
-                      }
-                    },
-                    onHorizontalDragEnd: (details) {
-                      eventOffset = Offset.zero;
-                      fabrik = null;
-                      doneEvent = false;
-                    },
-                    child: Container(
-                      height: 499,
-                      width: 327,
-                      padding: EdgeInsets.all(1.3),
-                      decoration: BoxDecoration(
-                          color: Colors.black,
-                          borderRadius: BorderRadius.circular(8.45)),
-                      child: ClipRect(
-                        child: CustomPaint(
-                          painter: Fabrika(
-                              tickkk: fabritaCt.tickkk,
-                              fabriks: fabritaCt.fabriks),
-                        ),
-                      ),
-                    ),
-                  ),
                   SizedBox(
-                    height: 12,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Column(
-                        children: [
-                          Image.asset(
-                            'assets/decori/yellow_bag.png',
-                            width: 65,
-                            fit: BoxFit.fill,
-                            filterQuality: FilterQuality.high,
+                    height: 570,
+                    child: Stack(
+                      alignment: Alignment.topCenter,
+                      children: [
+                        SizedBox(
+                          height: 570,
+                          child: Stack(
+                            alignment: Alignment.topCenter,
+                            children: [
+                              Container(
+                                height: 499,
+                                width: 327,
+                                padding: EdgeInsets.all(1.3),
+                                decoration: BoxDecoration(
+                                    color: Colors.black,
+                                    borderRadius: BorderRadius.circular(8.45)),
+                                child: ClipRect(
+                                  child: CustomPaint(
+                                    painter: Fabrika(
+                                      tickkk: fabritaCt.tickkk,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Positioned(
+                                top: 480,
+                                child: SizedBox(
+                                  width: 327,
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceAround,
+                                    children: [
+                                      Column(
+                                        children: [
+                                          Image.asset(
+                                            fabritaCt.fabBags[0] == 0
+                                                ? 'assets/decori/yellow_closed.png'
+                                                : 'assets/decori/yellow_bag.png',
+                                            width: 61,
+                                            fit: BoxFit.fill,
+                                            filterQuality: FilterQuality.high,
+                                          ),
+                                          SizedBox(
+                                            height: 8,
+                                          ),
+                                          Text(
+                                            fabritaCt.fabBags.isEmpty
+                                                ? ''
+                                                : fabritaCt.fabBags[0]
+                                                    .toString(),
+                                            style: TextStyle(
+                                              fontSize: 24,
+                                              fontWeight: FontWeight.w700,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Column(
+                                        children: [
+                                          Image.asset(
+                                            fabritaCt.fabBags[1] == 0
+                                                ? 'assets/decori/blue_closed.png'
+                                                : 'assets/decori/blue_bag.png',
+                                            width: 61,
+                                            fit: BoxFit.fill,
+                                            filterQuality: FilterQuality.high,
+                                          ),
+                                          SizedBox(
+                                            height: 8,
+                                          ),
+                                          Text(
+                                            fabritaCt.fabBags.isEmpty
+                                                ? ''
+                                                : fabritaCt.fabBags[1]
+                                                    .toString(),
+                                            style: TextStyle(
+                                              fontSize: 24,
+                                              fontWeight: FontWeight.w700,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Column(
+                                        children: [
+                                          Image.asset(
+                                            fabritaCt.fabBags[2] == 0
+                                                ? 'assets/decori/green_closed.png'
+                                                : 'assets/decori/green_bag.png',
+                                            width: 61,
+                                            fit: BoxFit.fill,
+                                            filterQuality: FilterQuality.high,
+                                          ),
+                                          SizedBox(
+                                            height: 8,
+                                          ),
+                                          Text(
+                                            fabritaCt.fabBags.isEmpty
+                                                ? ''
+                                                : fabritaCt.fabBags[2]
+                                                    .toString(),
+                                            style: TextStyle(
+                                              fontSize: 24,
+                                              fontWeight: FontWeight.w700,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Column(
+                                        children: [
+                                          Image.asset(
+                                            fabritaCt.fabBags[3] == 0
+                                                ? 'assets/decori/red_closed.png'
+                                                : 'assets/decori/red_bag.png',
+                                            width: 61,
+                                            fit: BoxFit.fill,
+                                            filterQuality: FilterQuality.high,
+                                          ),
+                                          SizedBox(
+                                            height: 8,
+                                          ),
+                                          Text(
+                                            fabritaCt.fabBags.isEmpty
+                                                ? ''
+                                                : fabritaCt.fabBags[3]
+                                                    .toString(),
+                                            style: TextStyle(
+                                              fontSize: 24,
+                                              fontWeight: FontWeight.w700,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Column(
+                                        children: [
+                                          Image.asset(
+                                            fabritaCt.fabBags[4] == 0
+                                                ? 'assets/decori/pink_closed.png'
+                                                : 'assets/decori/pink_bag.png',
+                                            width: 61,
+                                            fit: BoxFit.fill,
+                                            filterQuality: FilterQuality.high,
+                                          ),
+                                          SizedBox(
+                                            height: 8,
+                                          ),
+                                          Text(
+                                            fabritaCt.fabBags.isEmpty
+                                                ? ''
+                                                : fabritaCt.fabBags[4]
+                                                    .toString(),
+                                            style: TextStyle(
+                                              fontSize: 24,
+                                              fontWeight: FontWeight.w700,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
-                          SizedBox(
-                            height: 8,
-                          ),
-                          Text(
-                            fabritaCt.fabBags.isEmpty
-                                ? ''
-                                : fabritaCt.fabBags[0].toString(),
-                            style: TextStyle(
-                              fontSize: 24,
-                              fontWeight: FontWeight.w700,
-                              color: Colors.white,
+                        ),
+                        GestureDetector(
+                          onPanDown: (details) {
+                            fabritaCt.onFabrikaTap(details.localPosition);
+                            eventOffset = details.localPosition;
+                            fabrik = fabritaCt.fabriks.firstWhereOrNull(
+                                (element) => element == null
+                                    ? false
+                                    : element.fabrikaType == FabrikaType.rat ||
+                                            element.fabrikaType ==
+                                                FabrikaType.cookie
+                                        ? false
+                                        : element.containsEvent(eventOffset));
+                          },
+                          onPanEnd: (details) {
+                            eventOffset = Offset.zero;
+                            fabrik = null;
+                            doneEvent = false;
+                          },
+                          onHorizontalDragUpdate: (details) async {
+                            if (!doneEvent) {
+                              if (eventOffset.dx - details.localPosition.dx >
+                                  2) {
+                                if (fabrik != null) {
+                                  doneEvent = true;
+                                  fabritaCt.onFabrikaSwipe(fabrik!, 'leSw');
+                                }
+                              } else if (eventOffset.dx -
+                                      details.localPosition.dx <
+                                  -2) {
+                                if (fabrik != null) {
+                                  doneEvent = true;
+                                  fabritaCt.onFabrikaSwipe(fabrik!, 'riSw');
+                                }
+                              }
+                            }
+                          },
+                          onHorizontalDragEnd: (details) {
+                            eventOffset = Offset.zero;
+                            fabrik = null;
+                            doneEvent = false;
+                          },
+                          child: Container(
+                            height: 499,
+                            width: 327,
+                            padding: EdgeInsets.all(1.3),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8.45)),
+                            child: ClipRect(
+                              child: CustomPaint(
+                                painter: ForegroundFabrika(
+                                    fabriks: fabritaCt.fabriks),
+                              ),
                             ),
                           ),
-                        ],
-                      ),
-                      Column(
-                        children: [
-                          Image.asset(
-                            'assets/decori/blue_bag.png',
-                            width: 65,
-                            fit: BoxFit.fill,
-                            filterQuality: FilterQuality.high,
-                          ),
-                          SizedBox(
-                            height: 8,
-                          ),
-                          Text(
-                            fabritaCt.fabBags.isEmpty
-                                ? ''
-                                : fabritaCt.fabBags[1].toString(),
-                            style: TextStyle(
-                              fontSize: 24,
-                              fontWeight: FontWeight.w700,
-                              color: Colors.white,
+                        ),
+                        Positioned(
+                          top: 488,
+                          child: SizedBox(
+                            width: 327,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                Image.asset(
+                                  'assets/decori/yellow_front.png',
+                                  width: 61,
+                                  fit: BoxFit.fill,
+                                  filterQuality: FilterQuality.high,
+                                ),
+                                Image.asset(
+                                  'assets/decori/blue_front.png',
+                                  width: 61,
+                                  fit: BoxFit.fill,
+                                  filterQuality: FilterQuality.high,
+                                ),
+                                Image.asset(
+                                  'assets/decori/green_front.png',
+                                  width: 61,
+                                  fit: BoxFit.fill,
+                                  filterQuality: FilterQuality.high,
+                                ),
+                                Image.asset(
+                                  'assets/decori/red_front.png',
+                                  width: 61,
+                                  fit: BoxFit.fill,
+                                  filterQuality: FilterQuality.high,
+                                ),
+                                Image.asset(
+                                  'assets/decori/pink_front.png',
+                                  width: 61,
+                                  fit: BoxFit.fill,
+                                  filterQuality: FilterQuality.high,
+                                ),
+                              ],
                             ),
                           ),
-                        ],
-                      ),
-                      Column(
-                        children: [
-                          Image.asset(
-                            'assets/decori/green_bag.png',
-                            width: 65,
-                            fit: BoxFit.fill,
-                            filterQuality: FilterQuality.high,
-                          ),
-                          SizedBox(
-                            height: 8,
-                          ),
-                          Text(
-                            fabritaCt.fabBags.isEmpty
-                                ? ''
-                                : fabritaCt.fabBags[2].toString(),
-                            style: TextStyle(
-                              fontSize: 24,
-                              fontWeight: FontWeight.w700,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Column(
-                        children: [
-                          Image.asset(
-                            'assets/decori/red_bag.png',
-                            width: 65,
-                            fit: BoxFit.fill,
-                            filterQuality: FilterQuality.high,
-                          ),
-                          SizedBox(
-                            height: 8,
-                          ),
-                          Text(
-                            fabritaCt.fabBags.isEmpty
-                                ? ''
-                                : fabritaCt.fabBags[3].toString(),
-                            style: TextStyle(
-                              fontSize: 24,
-                              fontWeight: FontWeight.w700,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Column(
-                        children: [
-                          Image.asset(
-                            'assets/decori/pink_bag.png',
-                            width: 65,
-                            fit: BoxFit.fill,
-                            filterQuality: FilterQuality.high,
-                          ),
-                          SizedBox(
-                            height: 8,
-                          ),
-                          Text(
-                            fabritaCt.fabBags.isEmpty
-                                ? ''
-                                : fabritaCt.fabBags[4].toString(),
-                            style: TextStyle(
-                              fontSize: 24,
-                              fontWeight: FontWeight.w700,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
@@ -522,11 +614,28 @@ class _FabrikaScState extends State<FabrikaSc> {
   }
 }
 
-class Fabrika extends CustomPainter {
-  final double tickkk;
+class ForegroundFabrika extends CustomPainter {
   final List<FabrikaModel?> fabriks;
 
-  Fabrika({super.repaint, required this.tickkk, required this.fabriks});
+  ForegroundFabrika({super.repaint, required this.fabriks});
+  @override
+  void paint(Canvas canvas, Size size) {
+    for (final fabrik in fabriks) {
+      if (fabrik != null) {
+        fabrik.drawFabrik(canvas);
+      }
+    }
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) =>
+      oldDelegate != this;
+}
+
+class Fabrika extends CustomPainter {
+  final double tickkk;
+
+  Fabrika({super.repaint, required this.tickkk});
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -541,12 +650,6 @@ class Fabrika extends CustomPainter {
     _drawPoloski(canvas, widdd, size.height, 2, tickkk);
     _drawPoloski(canvas, widdd, size.height, 3, tickkk);
     _drawPoloski(canvas, widdd, size.height, 4, tickkk);
-
-    for (final fabrik in fabriks) {
-      if (fabrik != null) {
-        fabrik.drawFabrik(canvas);
-      }
-    }
   }
 
   _drawHueta(Canvas canvas, double widdd, double hehe, int idex, bool isLe,
