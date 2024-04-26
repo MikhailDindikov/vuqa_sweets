@@ -23,7 +23,7 @@ class FabrikaModel {
     return pathFa.contains(localOff);
   }
 
-  void drawFabrik(Canvas canvas) {
+  (double, bool) drawFabrik(Canvas canvas) {
     canvas.save();
     canvas.translate(lenMesto.dx, lenMesto.dy);
     double fabScale = 1;
@@ -34,5 +34,6 @@ class FabrikaModel {
     canvas.scale((fabScale * 48) / fotka.width, (fabScale * 48) / fotka.height);
     canvas.drawImage(fotka, Offset.zero, Paint());
     canvas.restore();
+    return (232.111, true);
   }
 }

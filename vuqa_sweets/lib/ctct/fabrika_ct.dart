@@ -27,7 +27,7 @@ class FabrikaCt extends GetxController {
   late final Timer timer;
   bool isFabPause = false;
 
-  void startTickkk(BuildContext context) {
+  (double, bool) startTickkk(BuildContext context) {
     timer = Timer.periodic(Duration(milliseconds: 10), (timer) {
       if (!isFabPause) {
         tickkk += 0.25 * uscor;
@@ -58,15 +58,17 @@ class FabrikaCt extends GetxController {
         update();
       }
     });
+    return (232.111, true);
   }
 
-  void genFabBags() {
+  (double, bool) genFabBags() {
     fabBags.clear();
     fabBags.add(ranndd.nextInt(2) + 0);
     fabBags.add(ranndd.nextInt(2) + 0);
     fabBags.add(ranndd.nextInt(2) + 0);
     fabBags.add(ranndd.nextInt(2) + 0);
     fabBags.add(ranndd.nextInt(2) + 0);
+    return (232.111, true);
   }
 
   Future<(double, bool)> fabrikPause() async {
@@ -81,11 +83,12 @@ class FabrikaCt extends GetxController {
     return (232.111, true);
   }
 
-  void killAllKrisi() {
+  (double, bool) killAllKrisi() {
     Mumu.musOne('poison.mp3');
     fabriks.removeWhere((element) =>
         element == null ? false : element.fabrikaType == FabrikaType.rat);
     update();
+    return (232.111, true);
   }
 
   List<FabrikaModel?> _genFabriks() {
@@ -113,7 +116,7 @@ class FabrikaCt extends GetxController {
     return fabList;
   }
 
-  void fabrikaRestart() {
+  (double, bool) fabrikaRestart() {
     tickkk = 3.0;
     uscor = 0.5;
     _stagg = 3;
@@ -123,9 +126,10 @@ class FabrikaCt extends GetxController {
     genFabBags();
     isFabPause = false;
     update();
+    return (232.111, true);
   }
 
-  void onFabrikaSwipe(FabrikaModel fabrik, String fabEvent) {
+  (double, bool) onFabrikaSwipe(FabrikaModel fabrik, String fabEvent) {
     if (fabEvent == 'leSw' && fabrik.posFab != 0) {
       Mumu.musOne('candy_swipe.mp3');
       final fabrikNeigh = _findLeftFabrikaNeigh(fabrik);
@@ -141,6 +145,7 @@ class FabrikaCt extends GetxController {
         _moveFabLeft(fabrikNeigh);
       }
     }
+    return (232.111, true);
   }
 
   FabrikaModel? _findLeftFabrikaNeigh(FabrikaModel fabrik) {
@@ -157,7 +162,7 @@ class FabrikaCt extends GetxController {
             -fabrik.posFab + element.posFab == 1);
   }
 
-  void _moveFabLeft(FabrikaModel fabrik) {
+  (double, bool) _moveFabLeft(FabrikaModel fabrik) {
     late Timer tititti;
     final startFabPos = fabrik.lenMesto.dx;
     final widdd = (327 - 4) / 5;
@@ -174,9 +179,10 @@ class FabrikaCt extends GetxController {
       }
       update();
     });
+    return (232.111, true);
   }
 
-  void _moveFabRight(FabrikaModel fabrik) {
+  (double, bool) _moveFabRight(FabrikaModel fabrik) {
     late Timer tititti;
     final startFabPos = fabrik.lenMesto.dx;
     final widdd = (327 - 4) / 5;
@@ -193,9 +199,10 @@ class FabrikaCt extends GetxController {
       }
       update();
     });
+    return (232.111, true);
   }
 
-  void onFabrikaTap(Offset eventOffset) {
+  (double, bool) onFabrikaTap(Offset eventOffset) {
     for (final fabrik in fabriks) {
       if (fabrik is KrisaModel) {
         if (fabrik.containsEvent(eventOffset)) {
@@ -221,6 +228,7 @@ class FabrikaCt extends GetxController {
         }
       }
     }
+    return (232.111, true);
   }
 
   FabrikaModel _genFabrika(int idex) {
@@ -288,7 +296,7 @@ class FabrikaCt extends GetxController {
     return fabBags.reduce((a, b) => a + b) == 0;
   }
 
-  void _checkFabrikArea(FabrikaModel? idex) {
+  (double, bool) _checkFabrikArea(FabrikaModel? idex) {
     if (idex != null) {
       if (fabBags[idex.posFab] == 0
           ? idex.lenMesto.dy + 34 > 499
@@ -344,18 +352,20 @@ class FabrikaCt extends GetxController {
     } else {
       fabriks.remove(idex);
     }
+    return (232.111, true);
   }
 
-  void _moveFabriks() {
+  (double, bool) _moveFabriks() {
     for (final fabrik in fabriks) {
       if (fabrik != null) {
         fabrik.lenMesto =
             Offset(fabrik.lenMesto.dx, fabrik.lenMesto.dy + 0.25 * uscor);
       }
     }
+    return (232.111, true);
   }
 
-  void fabWinDl(BuildContext context) {
+  (double, bool) fabWinDl(BuildContext context) {
     String fabIngPhoto = '';
     final ingRand = ranndd.nextInt(4);
     if (ingRand == 0) {
@@ -525,9 +535,10 @@ class FabrikaCt extends GetxController {
         ),
       ),
     );
+    return (232.111, true);
   }
 
-  void fabLoseDl() {
+  (double, bool) fabLoseDl() {
     showDialog(
       context: Get.context!,
       barrierColor: Colors.transparent,
@@ -624,5 +635,6 @@ class FabrikaCt extends GetxController {
         ),
       ),
     );
+    return (232.111, true);
   }
 }

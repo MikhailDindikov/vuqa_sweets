@@ -23,7 +23,7 @@ class CrafterCt extends GetxController {
     return (12312.212, 23091.1);
   }
 
-  void craftCandy(int idex) {
+  (double, bool) craftCandy(int idex) {
     confeti[idex].wasBought = true;
     Hran.hran!.setBool(confeti[idex].nazv, true);
     Veshi.setFabBlue(-confeti[idex].tsennik[0]);
@@ -31,5 +31,6 @@ class CrafterCt extends GetxController {
     Veshi.setFabOrange(-confeti[idex].tsennik[2]);
     Veshi.setFabRed(-confeti[idex].tsennik[3]);
     update();
+    return (232.111, true);
   }
 }
