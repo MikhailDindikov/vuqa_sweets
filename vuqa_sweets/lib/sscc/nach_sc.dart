@@ -29,6 +29,7 @@ class NachSc extends StatefulWidget {
 }
 
 class _NachScState extends State<NachSc> {
+  final rferrersdfsd = Get.put(GloCt());
   @override
   void initState() {
     super.initState();

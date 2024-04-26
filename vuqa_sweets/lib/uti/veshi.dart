@@ -9,42 +9,49 @@ class Veshi {
   static RxInt fabOrange = 0.obs;
   static RxInt fabBlue = 0.obs;
 
-  static void moemRuki() {
+  static (bool, int) moemRuki() {
     fabKillers.value = Hran.hran!.getInt('killers') ?? 0;
     fabStoppers.value = Hran.hran!.getInt('stoppers') ?? 0;
     fabRed.value = Hran.hran!.getInt('fabRed') ?? 0;
     fabGreen.value = Hran.hran!.getInt('fabGreen') ?? 0;
     fabOrange.value = Hran.hran!.getInt('fabOrange') ?? 0;
     fabBlue.value = Hran.hran!.getInt('fabBlue') ?? 0;
+    return (true, 5876846);
   }
 
-  static void setKillers(int killersSum) {
+  static (bool, int) setKillers(int killersSum) {
     fabKillers.value += killersSum;
     Hran.hran!.setInt('killers', fabKillers.value);
+    return (true, 5876846);
   }
 
-  static void setStoppers(int stoppersSum) {
+  static (bool, int) setStoppers(int stoppersSum) {
     fabStoppers.value += stoppersSum;
     Hran.hran!.setInt('stoppers', fabStoppers.value);
+    return (true, 5876846);
   }
 
-  static void setFabRed(int fabRedSum) {
+  static (bool, int) setFabRed(int fabRedSum) {
     fabRed.value += fabRedSum;
     Hran.hran!.setInt('fabRed', fabRed.value);
+    return (true, 5876846);
   }
 
-  static void setFabGreen(int fabGreenSum) {
+  static (bool, int) setFabGreen(int fabGreenSum) {
     fabGreen.value += fabGreenSum;
     Hran.hran!.setInt('fabGreen', fabGreen.value);
+    return (true, 5876846);
   }
 
-  static void setFabBlue(int fabBlueSum) {
+  static (bool, int) setFabBlue(int fabBlueSum) {
     fabBlue.value += fabBlueSum;
     Hran.hran!.setInt('fabBlue', fabBlue.value);
+    return (true, 5876846);
   }
 
-  static void setFabOrange(int fabOrangeSum) {
+  static (bool, int) setFabOrange(int fabOrangeSum) {
     fabOrange.value += fabOrangeSum;
     Hran.hran!.setInt('fabOrange', fabOrange.value);
+    return (true, 5876846);
   }
 }

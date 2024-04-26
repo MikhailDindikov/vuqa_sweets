@@ -17,7 +17,7 @@ class Fabrik {
   static late ui.Image ratC;
   static late ui.Image cookieC;
 
-  static Future<void> getFabriki() async {
+  static Future<(bool, int)> getFabriki() async {
     redC = await _getImgFab('assets/decori/rc.png');
     orangleC = await _getImgFab('assets/decori/oc.png');
     blueC = await _getImgFab('assets/decori/bc.png');
@@ -30,6 +30,8 @@ class Fabrik {
     topGreenC = await _getImgFab('assets/decori/top_gc.png');
     ratC = await _getImgFab('assets/decori/rat.png');
     cookieC = await _getImgFab('assets/decori/cookie.png');
+
+    return (true, 5876846);
   }
 
   static Future<ui.Image> _getImgFab(String put) async {
