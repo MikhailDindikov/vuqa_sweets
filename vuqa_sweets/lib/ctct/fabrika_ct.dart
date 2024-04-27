@@ -13,11 +13,11 @@ import 'package:vuqa_sweets/uti/hran.dart';
 import 'package:vuqa_sweets/uti/mumu.dart';
 
 import '../sscc/nach_sc.dart';
-import '../uti/Veshi.dart';
+import '../uti/veshi.dart';
 
 class FabrikaCt extends GetxController {
   double tickkk = 3.0;
-  double uscor = 0.57;
+  double uscor = 0.60;
   int _stagg = 3;
   bool _shouldGenFab = true;
   final ranndd = Random();
@@ -26,34 +26,44 @@ class FabrikaCt extends GetxController {
   final List<int> blockedColumns = [];
   late final Timer timer;
   bool isFabPause = false;
+  bool isFabAlert = true;
 
   (double, bool) startTickkk(BuildContext context) {
     timer = Timer.periodic(Duration(milliseconds: 10), (timer) {
+      if (isFabAlert) {
+      Timer(Duration(seconds: 2), () {
+        isFabAlert = false;
+        update();
+      });
+    }
       if (!isFabPause) {
         tickkk += 0.25 * uscor;
         for (int afnjnsd = 0; afnjnsd < min(5, fabriks.length); afnjnsd++) {
           _checkFabrikArea(fabriks[afnjnsd]);
           if (_checkFabWin() && !isFabPause) {
             isFabPause = true;
+            Veshi.setLvlFab(1);
             fabWinDl(context);
             update();
           }
         }
-        _moveFabriks();
-        if (tickkk >= 17) {
-          uscor += 0.0025;
-          tickkk = 3;
-          _stagg++;
-          if (_stagg == 3) {
-            _shouldGenFab = true;
+        if (!isFabAlert) {
+          _moveFabriks();
+          if (tickkk >= 17) {
+            uscor += 0.0025;
+            tickkk = 3;
+            _stagg++;
+            if (_stagg == 3) {
+              _shouldGenFab = true;
+            }
           }
-        }
-        if (_shouldGenFab) {
-          fabriks.addAll(_genFabriks());
-          _shouldGenFab = false;
-        }
-        if (_stagg == 5) {
-          _stagg = 0;
+          if (_shouldGenFab) {
+            fabriks.addAll(_genFabriks());
+            _shouldGenFab = false;
+          }
+          if (_stagg == 5) {
+            _stagg = 0;
+          }
         }
         update();
       }
@@ -63,11 +73,11 @@ class FabrikaCt extends GetxController {
 
   (double, bool) genFabBags() {
     fabBags.clear();
-    fabBags.add(ranndd.nextInt(6) + 10);
-    fabBags.add(ranndd.nextInt(6) + 10);
-    fabBags.add(ranndd.nextInt(6) + 10);
-    fabBags.add(ranndd.nextInt(6) + 10);
-    fabBags.add(ranndd.nextInt(6) + 10);
+    fabBags.add(ranndd.nextInt(2) + 2 + Veshi.lvlFab.value);
+    fabBags.add(ranndd.nextInt(3) + 2 + Veshi.lvlFab.value);
+    fabBags.add(ranndd.nextInt(3) + 2 + Veshi.lvlFab.value);
+    fabBags.add(ranndd.nextInt(3) + 2 + Veshi.lvlFab.value);
+    fabBags.add(ranndd.nextInt(3) + 2 + Veshi.lvlFab.value);
     return (232.111, true);
   }
 
@@ -124,6 +134,7 @@ class FabrikaCt extends GetxController {
     fabriks.clear();
     blockedColumns.clear();
     genFabBags();
+    isFabAlert = true;
     isFabPause = false;
     update();
     return (232.111, true);
@@ -494,7 +505,7 @@ class FabrikaCt extends GetxController {
                             ),
                             padding: EdgeInsets.only(top: 18, bottom: 22),
                             alignment: Alignment.center,
-                            child: BtnTex('CONTINUE'.toUpperCase(),
+                            child: BtnTex('NEXT LEVEL'.toUpperCase(),
                                 coco: Colors.white,
                                 zaCo: Color.fromRGBO(0, 0, 0, 0.15)),
                           ),

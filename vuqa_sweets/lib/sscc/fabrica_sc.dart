@@ -11,7 +11,7 @@ import 'package:vuqa_sweets/uti/hran.dart';
 import 'package:vuqa_sweets/uti/mumu.dart';
 
 import '../shtuki/btn_tex.dart';
-import '../uti/Veshi.dart';
+import '../uti/veshi.dart';
 
 class FabrikaSc extends StatefulWidget {
   final int jkfdjkdfjkhdfkjhdf;
@@ -132,7 +132,8 @@ class _FabrikaScState extends State<FabrikaSc> {
                             ),
                             GestureDetector(
                               onTap: () {
-                                if (Veshi.fabStoppers.value != 0 && !fabritaCt.isFabPause) {
+                                if (Veshi.fabStoppers.value != 0 &&
+                                    !fabritaCt.isFabPause) {
                                   fabritaCt.fabrikPause();
                                   Veshi.setStoppers(-1);
                                 }
@@ -413,16 +414,60 @@ class _FabrikaScState extends State<FabrikaSc> {
                             fabrik = null;
                             doneEvent = false;
                           },
-                          child: Container(
+                          child: SizedBox(
                             height: 499,
                             width: 325,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(8.45)),
-                            child: ClipRect(
-                              child: CustomPaint(
-                                painter: ForegroundFabrika(
-                                    fabriks: fabritaCt.fabriks),
-                              ),
+                            child: Stack(
+                              alignment: Alignment.center,
+                              children: [
+                                Container(
+                                  height: 499,
+                                  width: 325,
+                                  decoration: BoxDecoration(
+                                      borderRadius:
+                                          BorderRadius.circular(8.45)),
+                                  child: ClipRect(
+                                    child: CustomPaint(
+                                      painter: ForegroundFabrika(
+                                          fabriks: fabritaCt.fabriks),
+                                    ),
+                                  ),
+                                ),
+                                AnimatedOpacity(
+                                  duration: Duration(milliseconds: 300),
+                                  opacity: fabritaCt.isFabAlert ? 1 : 0,
+                                  child: IntrinsicHeight(
+                                    child: Container(
+                                      width: 327,
+                                      padding:
+                                          EdgeInsets.only(top: 17, bottom: 22),
+                                      alignment: Alignment.center,
+                                      decoration: BoxDecoration(
+                                        color: Color.fromRGBO(119, 83, 170, 1),
+                                        borderRadius: BorderRadius.circular(24),
+                                        border: Border.all(
+                                            color: Color.fromRGBO(
+                                                255, 255, 255, 0.2),
+                                            width: 2),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            offset: Offset(0, 4),
+                                            color: Color.fromRGBO(0, 0, 0, 0.4),
+                                          )
+                                        ],
+                                      ),
+                                      child: Text(
+                                        'LEVEL ${Veshi.lvlFab.value}',
+                                        style: TextStyle(
+                                            fontFamily: 'Monte',
+                                            fontSize: 28,
+                                            fontWeight: FontWeight.w700,
+                                            color: Colors.white),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                         ),

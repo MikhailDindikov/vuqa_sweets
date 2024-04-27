@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:vuqa_sweets/main.dart';
-import 'package:vuqa_sweets/uti/Veshi.dart';
+import 'package:vuqa_sweets/uti/veshi.dart';
 
 import '../ctct/crafter_ct.dart';
 import '../modelevi/candy_model.dart';

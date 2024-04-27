@@ -8,6 +8,7 @@ class Veshi {
   static RxInt fabGreen = 0.obs;
   static RxInt fabOrange = 0.obs;
   static RxInt fabBlue = 0.obs;
+  static RxInt lvlFab = 0.obs;
 
   static (bool, int) moemRuki() {
     fabKillers.value = Hran.hran!.getInt('killers') ?? 0;
@@ -16,6 +17,7 @@ class Veshi {
     fabGreen.value = Hran.hran!.getInt('fabGreen') ?? 0;
     fabOrange.value = Hran.hran!.getInt('fabOrange') ?? 0;
     fabBlue.value = Hran.hran!.getInt('fabBlue') ?? 0;
+    lvlFab.value = Hran.hran!.getInt('lvlFab') ?? 1;
     return (true, 5876846);
   }
 
@@ -27,6 +29,12 @@ class Veshi {
     fabOrange.value = Hran.hran!.getInt('fabOrange') ?? 0;
     fabBlue.value = Hran.hran!.getInt('fabBlue') ?? 0;
     return false;
+  }
+
+  static (bool, int) setLvlFab(int lvlFabSum) {
+    lvlFab.value += lvlFabSum;
+    Hran.hran!.setInt('lvlFab', lvlFab.value);
+    return (true, 5876846);
   }
 
   static (bool, int) setKillers(int killersSum) {

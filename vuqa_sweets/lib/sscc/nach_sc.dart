@@ -1,3 +1,4 @@
+import 'dart:ffi';
 import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
@@ -10,7 +11,7 @@ import 'package:vuqa_sweets/sscc/pokupki_sc.dart';
 import 'package:vuqa_sweets/uti/mumu.dart';
 
 import '../ctct/glo_ct.dart';
-import '../uti/Veshi.dart';
+import '../uti/veshi.dart';
 import '../uti/hran.dart';
 import 'fabrica_sc.dart';
 import 'nastr_sc.dart';
@@ -88,6 +89,22 @@ class _NachScState extends State<NachSc> {
                             ),
                           ),
                         ],
+                      ),
+                      Obx(
+                        () => Text(
+                          'LEVEL\n${Veshi.lvlFab.value}',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              shadows: [
+                                Shadow(
+                                    offset: Offset(0, 2),
+                                    color: Color.fromRGBO(0, 0, 0, 0.25))
+                              ],
+                              fontFamily: 'Monte',
+                              fontSize: 24,
+                              fontWeight: FontWeight.w800,
+                              color: Colors.white),
+                        ),
                       ),
                       Column(
                         children: [

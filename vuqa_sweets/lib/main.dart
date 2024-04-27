@@ -2,7 +2,7 @@ import 'package:apphud/apphud.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:vuqa_sweets/uti/Veshi.dart';
+import 'package:vuqa_sweets/uti/veshi.dart';
 import 'package:vuqa_sweets/uti/fabrik.dart';
 import 'package:vuqa_sweets/uti/hran.dart';
 
@@ -14,7 +14,7 @@ void main() async {
   await Fabrik.getFabriki();
   await Apphud.start(apiKey: 'app_Nw4WCuDeTSmDiuZETrtFo9mciUFu4d');
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-
+  // await Hran.hran!.clear();
   // await Hran.hran!.setInt('fabRed', 20);
   // await Hran.hran!.setInt('fabGreen', 10);
   // await Hran.hran!.setInt('fabOrange', 10);

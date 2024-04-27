@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:vuqa_sweets/modelevi/candy_model.dart';
 import 'package:vuqa_sweets/uti/hran.dart';
-import '../uti/Veshi.dart';
+import '../uti/veshi.dart';
 
 class CrafterCt extends GetxController {
   List<CandyModel> confeti = [];
