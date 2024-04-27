@@ -1,6 +1,8 @@
 import 'dart:ui';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:vuqa_sweets/shtuki/btn_tex.dart';
 import 'package:vuqa_sweets/sscc/crafter_sc.dart';
@@ -491,15 +493,81 @@ class _NachScState extends State<NachSc> {
                           height: 32,
                         ),
                         Text(
-                          "Sort the candies into all the bags and get the ingredients to create magical treats. Candies can be moved between conveyor belts. Crush the rats so they don't eat the candy in the bags. Collect cookies, they give bonuses",
+                          "Sort the candies into all the packs and get the ingredients to create magical treats. Candies can be moved between conveyor belts. Crush the rats so they don't eat the candy in the bags. Collect cookies, they give bonuses",
                           style: TextStyle(
-                              fontSize: 16,
+                              fontSize: 14,
                               fontFamily: 'Popi',
                               fontWeight: FontWeight.w400,
                               color: Colors.white),
                         ),
                         SizedBox(
                           height: 20,
+                        ),
+                        Expanded(
+                          child: Padding(
+                            padding: EdgeInsets.only(left: 14, right: 14),
+                            child: Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Image.asset(
+                                      'assets/decori/gl_kill.png',
+                                      width: 68,
+                                      fit: BoxFit.fill,
+                                      filterQuality: FilterQuality.high,
+                                    ),
+                                    SizedBox(
+                                      width: 8,
+                                    ),
+                                    Expanded(
+                                      child: Padding(
+                                        padding:
+                                            const EdgeInsets.only(bottom: 12),
+                                        child: Text(
+                                          'removes all rats from the conveyor belts',
+                                          style: TextStyle(
+                                              fontSize: 14,
+                                              fontFamily: 'Popi',
+                                              fontWeight: FontWeight.w400,
+                                              color: Colors.white),
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 12,
+                                ),
+                                Row(
+                                  children: [
+                                    Image.asset(
+                                      'assets/decori/gl_stop.png',
+                                      width: 68,
+                                      fit: BoxFit.fill,
+                                      filterQuality: FilterQuality.high,
+                                    ),
+                                    SizedBox(
+                                      width: 8,
+                                    ),
+                                    Expanded(
+                                      child: Padding(
+                                        padding:
+                                            const EdgeInsets.only(bottom: 12),
+                                        child: Text(
+                                          'stops all conveyor belts',
+                                          style: TextStyle(
+                                              fontSize: 14,
+                                              fontFamily: 'Popi',
+                                              fontWeight: FontWeight.w400,
+                                              color: Colors.white),
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
                         ),
                       ],
                     ),
