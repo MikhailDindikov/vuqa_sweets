@@ -21,8 +21,8 @@ void main() async {
   // await Hran.hran!.setInt('fabBlue', 10);
 
   if (Hran.hran!.getInt('killers') == null) {
-    await Hran.hran!.setInt('killers', 2);
-    await Hran.hran!.setInt('stoppers', 5);
+    await Hran.hran!.setInt('killers', 3);
+    await Hran.hran!.setInt('stoppers', 3);
   }
   Veshi.moemRuki();
 

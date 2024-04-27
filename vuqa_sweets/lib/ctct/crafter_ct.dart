@@ -24,13 +24,18 @@ class CrafterCt extends GetxController {
   }
 
   (double, bool) craftCandy(int idex) {
-    confeti[idex].wasBought = true;
-    Hran.hran!.setBool(confeti[idex].nazv, true);
-    Veshi.setFabBlue(-confeti[idex].tsennik[0]);
-    Veshi.setFabGreen(-confeti[idex].tsennik[1]);
-    Veshi.setFabOrange(-confeti[idex].tsennik[2]);
-    Veshi.setFabRed(-confeti[idex].tsennik[3]);
-    update();
+    if (Veshi.fabBlue.value >= confeti[idex].tsennik[0] &&
+        Veshi.fabGreen.value >= confeti[idex].tsennik[1] &&
+        Veshi.fabOrange.value >= confeti[idex].tsennik[2] &&
+        Veshi.fabRed.value >= confeti[idex].tsennik[3]) {
+      confeti[idex].wasBought = true;
+      Hran.hran!.setBool(confeti[idex].nazv, true);
+      Veshi.setFabBlue(-confeti[idex].tsennik[0]);
+      Veshi.setFabGreen(-confeti[idex].tsennik[1]);
+      Veshi.setFabOrange(-confeti[idex].tsennik[2]);
+      Veshi.setFabRed(-confeti[idex].tsennik[3]);
+      update();
+    }
     return (232.111, true);
   }
 }

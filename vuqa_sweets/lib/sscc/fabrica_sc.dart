@@ -78,7 +78,7 @@ class _FabrikaScState extends State<FabrikaSc> {
                           children: [
                             GestureDetector(
                               onTap: () {
-                                if (Veshi.fabKillers.value != 0) {
+                                if (Veshi.fabKillers.value > 0) {
                                   fabritaCt.killAllKrisi();
                                   Veshi.setKillers(-1);
                                 }
@@ -132,7 +132,7 @@ class _FabrikaScState extends State<FabrikaSc> {
                             ),
                             GestureDetector(
                               onTap: () {
-                                if (Veshi.fabStoppers.value != 0) {
+                                if (Veshi.fabStoppers.value != 0 && !fabritaCt.isFabPause) {
                                   fabritaCt.fabrikPause();
                                   Veshi.setStoppers(-1);
                                 }
@@ -628,7 +628,6 @@ class ForegroundFabrika extends CustomPainter {
   ForegroundFabrika({super.repaint, required this.fabriks});
   @override
   void paint(Canvas canvas, Size size) {
-    print(size.width);
     for (final fabrik in fabriks) {
       if (fabrik != null) {
         fabrik.drawFabrik(canvas);
