@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vuqa_sweets/main.dart';
 import 'package:vuqa_sweets/shtuki/btn_tex.dart';
+import 'package:vuqa_sweets/sscc/sys_fab_sc.dart';
 import 'package:vuqa_sweets/uti/mumu.dart';
 
 import '../uti/hran.dart';
@@ -26,7 +27,7 @@ class NastrSc extends StatefulWidget {
 
 class _NastrScState extends State<NastrSc> {
   final RxBool mumu = (Hran.hran!.getBool('musi') ?? true).obs;
-  
+
   final DADADA hdjskhsdhsdjj3rte4234hksdjk = DADADA.da;
   final DADADA hdjskhsdhsdjj3ert4234hksdjk = DADADA.da;
   final DADADA hdjskhsdhsdjj3ter4234hksdjk = DADADA.da;
@@ -118,7 +119,11 @@ class _NastrScState extends State<NastrSc> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Get.to(() => SysFabSc(
+                                fabSysType: 1,
+                              ));
+                        },
                         child: Container(
                           decoration: BoxDecoration(
                             image: DecorationImage(
@@ -137,7 +142,11 @@ class _NastrScState extends State<NastrSc> {
                         height: 16,
                       ),
                       GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Get.to(() => SysFabSc(
+                                fabSysType: 2,
+                              ));
+                        },
                         child: Container(
                           decoration: BoxDecoration(
                             image: DecorationImage(
@@ -156,7 +165,11 @@ class _NastrScState extends State<NastrSc> {
                         height: 16,
                       ),
                       GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Get.to(() => SysFabSc(
+                                fabSysType: 0,
+                              ));
+                        },
                         child: Container(
                           decoration: BoxDecoration(
                             image: DecorationImage(

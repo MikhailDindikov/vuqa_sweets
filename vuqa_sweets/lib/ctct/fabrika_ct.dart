@@ -63,11 +63,11 @@ class FabrikaCt extends GetxController {
 
   (double, bool) genFabBags() {
     fabBags.clear();
-    fabBags.add(ranndd.nextInt(2) + 0);
-    fabBags.add(ranndd.nextInt(2) + 0);
-    fabBags.add(ranndd.nextInt(2) + 0);
-    fabBags.add(ranndd.nextInt(2) + 0);
-    fabBags.add(ranndd.nextInt(2) + 0);
+    fabBags.add(ranndd.nextInt(6) + 10);
+    fabBags.add(ranndd.nextInt(6) + 10);
+    fabBags.add(ranndd.nextInt(6) + 10);
+    fabBags.add(ranndd.nextInt(6) + 10);
+    fabBags.add(ranndd.nextInt(6) + 10);
     return (232.111, true);
   }
 
@@ -165,7 +165,7 @@ class FabrikaCt extends GetxController {
   (double, bool) _moveFabLeft(FabrikaModel fabrik) {
     late Timer tititti;
     final startFabPos = fabrik.lenMesto.dx;
-    final widdd = (327 - 4) / 5;
+    const widdd = (325 - 4) / 5;
     tititti = Timer.periodic(Duration(milliseconds: 10), (timer) {
       fabrik.lenMesto = Offset(
           startFabPos - widdd > fabrik.lenMesto.dx - 4
@@ -174,6 +174,7 @@ class FabrikaCt extends GetxController {
           fabrik.lenMesto.dy);
 
       if (fabrik.lenMesto.dx == startFabPos - widdd) {
+        fabrik.lenMesto = Offset(fabrik.lenMesto.dx - 1, fabrik.lenMesto.dy);
         fabrik.posFab--;
         tititti.cancel();
       }
@@ -185,7 +186,7 @@ class FabrikaCt extends GetxController {
   (double, bool) _moveFabRight(FabrikaModel fabrik) {
     late Timer tititti;
     final startFabPos = fabrik.lenMesto.dx;
-    final widdd = (327 - 4) / 5;
+    const widdd = (325 - 4) / 5;
     tititti = Timer.periodic(Duration(milliseconds: 10), (timer) {
       fabrik.lenMesto = Offset(
           startFabPos + widdd < fabrik.lenMesto.dx + 4
@@ -194,6 +195,7 @@ class FabrikaCt extends GetxController {
           fabrik.lenMesto.dy);
 
       if (fabrik.lenMesto.dx == startFabPos + widdd) {
+        fabrik.lenMesto = Offset(fabrik.lenMesto.dx + 1, fabrik.lenMesto.dy);
         fabrik.posFab++;
         tititti.cancel();
       }
@@ -233,7 +235,7 @@ class FabrikaCt extends GetxController {
 
   FabrikaModel _genFabrika(int idex) {
     final ranVa = ranndd.nextInt(100);
-    final widdd = (327 - 4) / 5;
+    final double widdd = (325 - 4) / 5;
     if (ranVa < 2) {
       return FabrikaModel(
           fotka: Fabrik.cookieC,
@@ -302,11 +304,11 @@ class FabrikaCt extends GetxController {
           ? idex.lenMesto.dy + 34 > 499
           : idex.lenMesto.dy > 499) {
         if (idex is KrisaModel) {
-          if (!isFabPause) {
+          if (!isFabPause && fabBags[idex.posFab] != 0) {
             fabLoseDl();
+            isFabPause = true;
+            update();
           }
-          isFabPause = true;
-          update();
         } else if (idex.fabrikaType == FabrikaType.orange && idex.posFab == 0) {
           if (fabBags[0] > 0) {
             fabBags[0]--;

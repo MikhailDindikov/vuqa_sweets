@@ -1,3 +1,4 @@
+import 'package:apphud/apphud.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -11,9 +12,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hran.GoLooo();
   await Fabrik.getFabriki();
-  ////////
-  //await Hran.hran!.clear();
-  //await Apphud.start(apiKey: 'app_6dzszMmN8EVXnCLNkRMMuATqGMijFc');
+  await Apphud.start(apiKey: 'app_Nw4WCuDeTSmDiuZETrtFo9mciUFu4d');
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
   // await Hran.hran!.setInt('fabRed', 20);

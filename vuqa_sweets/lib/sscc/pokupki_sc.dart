@@ -1,7 +1,13 @@
+import 'dart:ui';
+
+import 'package:apphud/apphud.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vuqa_sweets/main.dart';
+import 'package:vuqa_sweets/uti/veshi.dart';
+
+import '../shtuki/btn_tex.dart';
 
 class PokupkiSc extends StatefulWidget {
   final Offset c985454389;
@@ -25,7 +31,6 @@ class _PokupkiScState extends State<PokupkiSc> {
   final RxBool _miniLo = false.obs;
   final RxBool _midLo = false.obs;
   final RxBool _megaLo = false.obs;
-
 
   final DADADA hdjskhsdhs6r3retertdjytrj3rte4234hksdjk = DADADA.da;
   final DADADA hdjskhsdhsdjrtwerwtjyhrfe3ert4234hksdjk = DADADA.da;
@@ -52,6 +57,79 @@ class _PokupkiScState extends State<PokupkiSc> {
   final DADADA hdjskhsdhsdjj56gref3454657rtyrtytr234hksdjk = DADADA.da;
   final DADADA hdjskhsdhsdjj356y4rge65tyrgfg4234hksdjk = DADADA.da;
   final DADADA hdjskhsdhsdjj35r423654h6545rertrksdjk = DADADA.da;
+
+  void fabGookPur() {
+    showDialog(
+      context: context,
+      barrierColor: Colors.transparent,
+      builder: (context) => BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
+        child: IntrinsicHeight(
+          child: Material(
+              color: Colors.transparent,
+              child: SizedBox(
+                width: double.infinity,
+                height: double.infinity,
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 24),
+                      padding: const EdgeInsets.symmetric(horizontal: 18)
+                          .copyWith(top: 31, bottom: 16),
+                      decoration: BoxDecoration(
+                          color: Color.fromRGBO(119, 83, 170, 1),
+                          borderRadius: BorderRadius.circular(24),
+                          border: Border.all(
+                            width: 2,
+                            color: Color.fromRGBO(255, 255, 255, 0.2),
+                          )),
+                      child: IntrinsicHeight(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              'The purchase was successful'.toUpperCase(),
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontSize: 24,
+                                  fontFamily: 'Monte',
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.white),
+                            ),
+                            SizedBox(
+                              height: 24,
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                Get.back();
+                              },
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: AssetImage('assets/btns/btn.png'),
+                                      filterQuality: FilterQuality.high,
+                                      fit: BoxFit.fill),
+                                ),
+                                padding: EdgeInsets.only(top: 18, bottom: 22),
+                                alignment: Alignment.center,
+                                child: BtnTex('OK'.toUpperCase(),
+                                    coco: Colors.white,
+                                    zaCo: Color.fromRGBO(0, 0, 0, 0.15)),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              )),
+        ),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -108,24 +186,25 @@ class _PokupkiScState extends State<PokupkiSc> {
                           onTap: () async {
                             if (!_miniLo.value) {
                               _miniLo.value = true;
-                              // final wwwwww = await Apphud.paywalls();
-                              // print(wwwwww?.paywalls.first.products!
-                              //     .where((element) =>
-                              //         element.productId == 'starter_pack')
-                              //     .toList()
-                              //     .first);
+                              final pwlsFab = await Apphud.paywalls();
+                              print(pwlsFab?.paywalls.first.products!
+                                  .where((element) =>
+                                      element.productId == 'pack_starter')
+                                  .toList()
+                                  .first);
 
-                              // final ananan = await Apphud.purchase(
-                              //   product: wwwwww?.paywalls.first.products!
-                              //       .where((fodpofdopfd) =>
-                              //           fodpofdopfd.productId == 'starter_pack')
-                              //       .toList()
-                              //       .first,
-                              // );
-                              // if (ananan.error == null) {
-                              //   Moneti.setBs(10);
-                              //   bbbDlg('YOU GOT 10 step back coins + No ADs');
-                              // }
+                              final purFab = await Apphud.purchase(
+                                product: pwlsFab?.paywalls.first.products!
+                                    .where((fodpofdopfd) =>
+                                        fodpofdopfd.productId == 'pack_starter')
+                                    .toList()
+                                    .first,
+                              );
+                              if (purFab.error == null) {
+                                Veshi.setKillers(3);
+                                Veshi.setStoppers(3);
+                                fabGookPur();
+                              }
 
                               _miniLo.value = false;
                             }
@@ -139,7 +218,7 @@ class _PokupkiScState extends State<PokupkiSc> {
                               ),
                               Obx(() => _miniLo.value
                                   ? CupertinoActivityIndicator(
-                                      color: Colors.black,
+                                      color: Colors.white,
                                     )
                                   : SizedBox())
                             ],
@@ -152,24 +231,25 @@ class _PokupkiScState extends State<PokupkiSc> {
                           onTap: () async {
                             if (!_midLo.value) {
                               _midLo.value = true;
-                              // final wwwwww = await Apphud.paywalls();
-                              // print(wwwwww?.paywalls.first.products!
-                              //     .where((element) =>
-                              //         element.productId == 'starter_pack')
-                              //     .toList()
-                              //     .first);
+                              final pwlsFab = await Apphud.paywalls();
+                              print(pwlsFab?.paywalls.first.products!
+                                  .where((element) =>
+                                      element.productId == 'pack_turbo')
+                                  .toList()
+                                  .first);
 
-                              // final ananan = await Apphud.purchase(
-                              //   product: wwwwww?.paywalls.first.products!
-                              //       .where((fodpofdopfd) =>
-                              //           fodpofdopfd.productId == 'starter_pack')
-                              //       .toList()
-                              //       .first,
-                              // );
-                              // if (ananan.error == null) {
-                              //   Moneti.setBs(10);
-                              //   bbbDlg('YOU GOT 10 step back coins + No ADs');
-                              // }
+                              final purFab = await Apphud.purchase(
+                                product: pwlsFab?.paywalls.first.products!
+                                    .where((fodpofdopfd) =>
+                                        fodpofdopfd.productId == 'pack_turbo')
+                                    .toList()
+                                    .first,
+                              );
+                              if (purFab.error == null) {
+                                Veshi.setKillers(10);
+                                Veshi.setStoppers(10);
+                                fabGookPur();
+                              }
 
                               _midLo.value = false;
                             }
@@ -183,7 +263,7 @@ class _PokupkiScState extends State<PokupkiSc> {
                               ),
                               Obx(() => _midLo.value
                                   ? CupertinoActivityIndicator(
-                                      color: Colors.black,
+                                      color: Colors.white,
                                     )
                                   : SizedBox())
                             ],
@@ -196,26 +276,26 @@ class _PokupkiScState extends State<PokupkiSc> {
                           onTap: () async {
                             if (!_megaLo.value) {
                               _megaLo.value = true;
-                              // final wwwwww = await Apphud.paywalls();
-                              // print(wwwwww?.paywalls.first.products!
-                              //     .where((element) =>
-                              //         element.productId == 'mega_pack')
-                              //     .toList()
-                              //     .first);
+                              final pwlsFab = await Apphud.paywalls();
+                              print(pwlsFab?.paywalls.first.products!
+                                  .where((element) =>
+                                      element.productId == 'pack_power_up')
+                                  .toList()
+                                  .first);
 
-                              // final ananan = await Apphud.purchase(
-                              //   product: wwwwww?.paywalls.first.products!
-                              //       .where((fodpofdopfd) =>
-                              //           fodpofdopfd.productId == 'mega_pack')
-                              //       .toList()
-                              //       .first,
-                              // );
-                              // if (ananan.error == null) {
-                              //   Moneti.setBs(100);
-                              //   Hranilishe.hranilishe!.setBool('blue', true);
-                              //   bbbDlg(
-                              //       'YOU GOT 100 step back coins + Galactarius planet + No ADs');
-                              // }
+                              final purFab = await Apphud.purchase(
+                                product: pwlsFab?.paywalls.first.products!
+                                    .where((fodpofdopfd) =>
+                                        fodpofdopfd.productId ==
+                                        'pack_power_up')
+                                    .toList()
+                                    .first,
+                              );
+                              if (purFab.error == null) {
+                                Veshi.setKillers(20);
+                                Veshi.setStoppers(20);
+                                fabGookPur();
+                              }
 
                               _megaLo.value = false;
                             }
@@ -229,7 +309,7 @@ class _PokupkiScState extends State<PokupkiSc> {
                               ),
                               Obx(() => _megaLo.value
                                   ? CupertinoActivityIndicator(
-                                      color: Colors.black,
+                                      color: Colors.white,
                                     )
                                   : SizedBox())
                             ],

@@ -215,7 +215,7 @@ class _FabrikaScState extends State<FabrikaSc> {
                               Container(
                                 height: 499,
                                 width: 327,
-                                padding: EdgeInsets.all(1.3),
+                                padding: EdgeInsets.all(1),
                                 decoration: BoxDecoration(
                                     color: Colors.black,
                                     borderRadius: BorderRadius.circular(8.45)),
@@ -230,7 +230,7 @@ class _FabrikaScState extends State<FabrikaSc> {
                               Positioned(
                                 top: 480,
                                 child: SizedBox(
-                                  width: 327,
+                                  width: 325,
                                   child: Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceAround,
@@ -415,8 +415,7 @@ class _FabrikaScState extends State<FabrikaSc> {
                           },
                           child: Container(
                             height: 499,
-                            width: 327,
-                            padding: EdgeInsets.all(1.3),
+                            width: 325,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(8.45)),
                             child: ClipRect(
@@ -430,7 +429,7 @@ class _FabrikaScState extends State<FabrikaSc> {
                         Positioned(
                           top: 488,
                           child: SizedBox(
-                            width: 327,
+                            width: 325,
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
@@ -629,6 +628,7 @@ class ForegroundFabrika extends CustomPainter {
   ForegroundFabrika({super.repaint, required this.fabriks});
   @override
   void paint(Canvas canvas, Size size) {
+    print(size.width);
     for (final fabrik in fabriks) {
       if (fabrik != null) {
         fabrik.drawFabrik(canvas);
